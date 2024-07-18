@@ -18,7 +18,6 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "@primevue/themes": "^4.0.0",
         "primevue": "^4.0.0",
         "tailwindcss-primeui": "^0.3.4"
     }
