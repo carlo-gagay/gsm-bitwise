@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Image extends Model
+class Vote extends Model
 {
     use HasFactory;
 
-    public function imageable(): MorphTo
+    public function voteable(): MorphTo
     {
         return $this->morphTo();
     }

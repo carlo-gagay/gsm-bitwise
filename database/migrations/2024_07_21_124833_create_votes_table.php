@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Enum\Vote;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reactions', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->morphs('reactable');
+            $table->morphs('voteable');
+            $table->enum('vote', Vote::getValues());
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reactions');
+        Schema::dropIfExists('votes');
     }
 };
